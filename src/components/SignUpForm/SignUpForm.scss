@@ -1,0 +1,168 @@
+@import "../../config/variables.scss";
+
+.sign-in-block {
+  max-width: 450px;
+  margin: 0 auto;
+  margin-top: 50px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  border-radius: 8px;
+  background: $white;
+  .sign-container {
+    .sign-header {
+      padding: 30px 30px 0;
+      @include xsm {
+        padding: 28px 20px 0;
+      }
+      .title {
+        color: $grayb2929;
+        font-size: 25px;
+        padding: 0 0 0 2px;
+        text-align: left;
+        font-weight: $semibold;
+        margin-bottom: 0;
+        .title-name {
+          color: $rede5424f;
+        }
+      }
+    }
+    .sign-content {
+      padding: 25px 30px;
+      text-align: center;
+      @include xsm {
+        padding: 25px 20px 25px;
+      }
+      form {
+        margin-bottom: 10px;
+        .input-box-group {
+          margin-bottom: 15px;
+          .input-box {
+            width: 100%;
+            margin-bottom: 10px;
+            input {
+              height: 45px;
+              border: 1px solid $gray8a8c90;
+              border-radius: 6px;
+              background: none;
+              &::placeholder {
+                color: $gray51596B;
+              }
+              @include xsm {
+                height: 35px;
+              }
+              @include sm {
+                height: 40px;
+              }
+              @include md {
+                height: 40px;
+              }
+            }
+          }
+          .input-box1 {
+            width: 100%;
+            margin-bottom: 10px;
+            position: relative;
+            input {
+              height: 45px;
+              border: 1px solid $gray8a8c90;
+              border-radius: 6px;
+              background: none;
+              &::placeholder {
+                color: $gray51596B;
+              }
+              @include xsm {
+                height: 35px;
+              }
+              @include sm {
+                height: 40px;
+              }
+              @include md {
+                height: 40px;
+              }
+            }
+            .icon-viz {
+              position: absolute;
+              top: 10px;
+              right: 16px;
+              cursor: pointer;
+            }
+          }
+          .input-box2 {
+            width: 100%;
+            margin-bottom: 10px;
+            position: relative;
+            select {
+              height: 45px;
+              border: 1px solid $gray8a8c90;
+              border-radius: 6px;
+              background: none;
+              &::placeholder {
+                color: $gray51596B;
+              }
+              @include xsm {
+                height: 35px;
+              }
+              @include sm {
+                height: 40px;
+              }
+              @include md {
+                height: 40px;
+              }
+            }
+            .icon-dropdown {
+              position: absolute;
+              top: 16px;
+              right: 16px;
+              cursor: pointer;
+            }
+          }
+        }
+        .btn {
+          color: $white;
+          background: $rede5424f;
+          width: 100%;
+          height: 45px;
+          line-height: 45px;
+          font-size: 16px;
+          font-weight: 600;
+          border-radius: 6px;
+          border: 0;
+          @include xsm {
+            height: 35px;
+            line-height: 35px;
+            font-size: 14px;
+          }
+          @include sm {
+            height: 40px;
+            line-height: 40px;
+            font-size: 15px;
+          }
+          @include md {
+            height: 40px;
+            line-height: 40px;
+            font-size: 15px;
+          }
+          &:hover {
+            color: #fff;
+            background: $redDark;
+          }
+        }
+      }
+      .redirectto {
+        margin-top: 13px;
+        .signupto {
+          padding: 0 5px;
+          margin: 0;
+          font-size: 14px;
+          color: $blue1f2430;
+          cursor: pointer;
+          font-weight: 550;
+          .signupto1 {
+            color: $blue;
+            padding-left: 5px;
+          }
+        }
+      }
+    }
+  }
+}

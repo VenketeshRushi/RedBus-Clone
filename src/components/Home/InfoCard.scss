@@ -1,0 +1,45 @@
+@import "../../config/variables.scss";
+
+.container {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  width: 24rem;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.discountinfo {
+  display: flex;
+  max-width: 36rem;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+  padding: 1.25rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  transition-property: transform;
+
+  &:hover {
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+  }
+  .dinfo1 {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.75rem;
+    text-align: center;
+    color: #1a202c;
+  }
+}
+
+// @media (min-width: 1024px) {
+//     width: 50%;
+//   }
