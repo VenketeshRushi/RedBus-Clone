@@ -1,24 +1,13 @@
-import React, { Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import renderRoutes from "./config/routes";
+import { BrowserRouter } from "react-router-dom";
 import "./common.scss";
+import AllRoutes from "./config/AllRoutes";
 
 function App() {
   return (
     <div className="App">
-      <Suspense fallback={<div>Loading...</div>}>
-        <BrowserRouter>
-          <Routes>
-            {renderRoutes.map(([key, route]) => (
-              <Route
-                key={key}
-                path={route.path}
-                Component={route.component}
-              />
-            ))}
-          </Routes>
-        </BrowserRouter>
-      </Suspense>
+      <BrowserRouter>
+        <AllRoutes />
+      </BrowserRouter>
     </div>
   );
 }
