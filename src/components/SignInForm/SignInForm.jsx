@@ -73,7 +73,7 @@ const SignInForm = () => {
                 />
               </div>
             </div>
-            <button className="btn btn-orange">Login</button>
+            <button className="btn btn-orange">Sign IN</button>
           </form>
           <div className="redirectto">
             <Link to="/signup" className="signupto">

@@ -3,10 +3,10 @@ import Layout from "../../Layout";
 import "./SignUpPage.scss";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 
-const LoginPage = () => {
+const SignUpPage = () => {
   return (
     <Layout>
-      <div className="main-content SignUpPage-page">
+      <div className="main-content SignUp-page">
         <div className="container-bigs">
           <SignUpForm />
         </div>
@@ -15,4 +15,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default SignUpPage;
