@@ -3,44 +3,41 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "./SignInForm.scss";
 import { loginAPI } from "../../redux/actions/userActions";
+import { errorToast } from "../../utils/toast";
 
 const SignInForm = () => {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
+  const [signUpcreds, setsignUpcreds] = useState({
+    email: "",
+    password: "",
+  });
 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { state } = useLocation();
 
   useEffect(() => {
     if (isAuthenticated) {
-      if (state.from) {
-        console.log(state.from);
+      if (state?.from) {
         navigate(state.from, { replace: true });
       } else {
         navigate("/");
       }
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, state, navigate]);
 
-  const initialData = {
-    email: "",
-    password: "",
-  };
-  const [signUpcreds, setsignUpcreds] = useState(initialData);
-  const [showpassword, setshowpassword] = useState(false);
-
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  const hanldeChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    setsignUpcreds({
-      ...signUpcreds,
+    setsignUpcreds((prevCreds) => ({
+      ...prevCreds,
       [name]: value,
-    });
+    }));
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (signUpcreds.email === "" || signUpcreds.password === "") {
-      return error("Please enter all required fields");
+      return errorToast("Please enter all required fields");
     }
     dispatch(loginAPI(signUpcreds));
   };
@@ -61,7 +58,8 @@ const SignInForm = () => {
                   name="email"
                   type="email"
                   placeholder="Enter Your Email"
-                  onChange={hanldeChange}
+                  value={signUpcreds.email}
+                  onChange={handleChange}
                 />
               </div>
               <div className="input-box">
@@ -69,15 +67,18 @@ const SignInForm = () => {
                   name="password"
                   type="password"
                   placeholder="Enter Your Password"
-                  onChange={hanldeChange}
+                  value={signUpcreds.password}
+                  onChange={handleChange}
                 />
               </div>
             </div>
-            <button className="btn btn-orange">Sign IN</button>
+            <button type="submit" className="btn btn-orange">
+              Sign In
+            </button>
           </form>
           <div className="redirectto">
             <Link to="/signup" className="signupto">
-              Don't have an account ? <span className="signupto1">Sign UP</span>
+              Don't have an account? <span className="signupto1">Sign Up</span>
             </Link>
           </div>
         </div>

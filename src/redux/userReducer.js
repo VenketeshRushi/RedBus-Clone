@@ -3,7 +3,7 @@ import { loginAPI } from "./actions/userActions";
 
 const initialState = {
   token: "",
-  isAuthenticated: "",
+  isAuthenticated: false,
   userid: "",
   loading: false,
 };
@@ -21,16 +21,26 @@ export const userSlice = createSlice({
       state.token = "";
       state.isAuthenticated = false;
       state.userid = "";
-      loading = false;
+      state.loading = false;
     },
-    extraReducers: {
-      [loginAPI.pending]: (state, action) => {
-        console.log("action: " + action.payload)
-      },
-      [loginAPI.fulfilled]: (state, action) => {
-        console.log("action: " + action.payload)
-      },
-    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(loginAPI.pending, (state, action) => {
+        state.loading = true;
+      })
+      .addCase(loginAPI.fulfilled, (state, action) => {
+        state.token = action.payload.jwttoken;
+        state.isAuthenticated = true;
+        state.loading = false;
+        state.userid = action.payload.userid;
+      })
+      .addCase(loginAPI.rejected, (state, action) => {
+        state.token = "";
+        state.isAuthenticated = false;
+        state.userid = "";
+        state.loading = false;
+      });
   },
 });
 
