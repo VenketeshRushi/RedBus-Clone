@@ -185,7 +185,7 @@ i:before {
 body {
   overflow-x: hidden;
   color: #1f2430;
-  background: #f5f7fa;
+  background: #fff;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -647,43 +647,43 @@ tr td:first-child {
   }
 }
 
-/* 9. Layout Framework
-------------------------------------------------------------------------------*/
-/* main container */
-.main-wrapper {
-  width: 100%;
-  background: #fff;
-}
-.wrapper {
-  padding: 65px 0 0 0;
-}
-#content-area {
-  width: 100%;
-  display: block;
-}
-.container-big {
-  max-width: 1330px;
-  width: 100%;
-  padding: 0 15px;
-}
-.container {
-  max-width: 1150px;
-  width: 100%;
-  padding: 0 15px;
-}
-.container-small {
-  max-width: 930px;
-  width: 100%;
-  padding: 0 15px;
-}
-#content-area .content .main-content {
-  max-width: calc(100% - 260px);
-  width: 100%;
-  margin: 0 0 25px auto;
-  @include lg {
-    max-width: calc(100% - 230px);
-  }
-  @include laptop1024_1279 {
-    max-width: calc(100% - 80px);
-  }
-}
+// /* 9. Layout Framework
+// ------------------------------------------------------------------------------*/
+// /* main container */
+// .main-wrapper {
+//   width: 100%;
+//   background: #fff;
+// }
+// .wrapper {
+//   padding: 65px 0 0 0;
+// }
+// #content-area {
+//   width: 100%;
+//   display: block;
+// }
+// .container-big {
+//   max-width: 1330px;
+//   width: 100%;
+//   padding: 0 15px;
+// }
+// .container {
+//   max-width: 1150px;
+//   width: 100%;
+//   padding: 0 15px;
+// }
+// .container-small {
+//   max-width: 930px;
+//   width: 100%;
+//   padding: 0 15px;
+// }
+// #content-area .content .main-content {
+//   max-width: calc(100% - 260px);
+//   width: 100%;
+//   margin: 0 0 25px auto;
+//   @include lg {
+//     max-width: calc(100% - 230px);
+//   }
+//   @include laptop1024_1279 {
+//     max-width: calc(100% - 80px);
+//   }
+// }

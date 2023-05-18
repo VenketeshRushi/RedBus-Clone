@@ -15,9 +15,9 @@ function AllRoutes() {
         <Route
           path="/"
           element={
-            <Private>
+            // <Private>
               <Home />
-            </Private>
+            // </Private>
           }
         />
       </Routes>

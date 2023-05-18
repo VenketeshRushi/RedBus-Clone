@@ -8,7 +8,7 @@ export const Private = ({ children }) => {
   const cookie = Cookies.get("jwttoken");
 
   if (!token && !cookie) {
-    return <Navigate to="/signin" />;
+    return <Navigate to="/signin" state={{ from: url }} replace />;
   } else {
     return children;
     // axios
